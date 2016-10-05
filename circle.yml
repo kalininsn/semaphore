@@ -8,7 +8,12 @@ dependencies:
     - sudo apt-add-repository -y 'deb
       http://ppa.launchpad.net/ondrej/mysql-experimental/ubuntu precise
       main'
-    - sudo apt-get remove mysql-server mysql-client mysql-common
+    - sudo apt-get remove mysql-server mysql-client mysql-common &&\
+      dpkg -r mysql-common &&\
+      dpkg --purge mysql-common &&\
+      dpkg --purge mysql-community-server &&\
+      dpkg --purge mysql-apt-config &&\
+      dpkg --purge libmysqlclient20:amd64
     - sudo apt-get update; sudo DEBIAN_FRONTEND=noninteractive apt-get
       install -y mysql-server-5.6
     - npm i -g nodemon less jade
