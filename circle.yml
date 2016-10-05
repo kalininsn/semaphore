@@ -11,7 +11,7 @@ dependencies:
     - sudo apt-get remove mysql-server mysql-client mysql-common 
     - sudo dpkg -r mysql-common 
     - sudo dpkg --purge mysql-common 
-    - sudo dpkg --purge mysql-community-server 
+#    - sudo dpkg --purge mysql-community-server --force 
     - sudo dpkg --purge mysql-apt-config 
     - sudo dpkg --purge libmysqlclient20:amd64
     - sudo apt-get update; sudo DEBIAN_FRONTEND=noninteractive apt-get
